@@ -37,9 +37,25 @@ cd ..
 * You can place these anywhere and update the docker-compose volumes
 
 ### Run docker
+
+#### Http
 ```
 docker-compose up --build
 ```
 
-The envoy gateway will be running on `https://localhost:10001` and you can access the respective APIs on `https://localhost:10001/api01` and 
-`https://localhost:10001/api02` 
+| Envoy Gateway | `http://localhost:10000` |
+| --- | --- |
+| Api 01 | `http://localhost:10000/api01` |
+| Api 02 | `http://localhost:10000/api02` |
+
+#### Https
+
+```
+docker-compose -f docker-compose-https.yml up --build
+```
+
+| Envoy Gateway | `https://localhost:10001` |
+| --- | --- |
+| Api 01 | `https://localhost:10001/api01` |
+| Api 02 | `https://localhost:10001/api02` |
+
