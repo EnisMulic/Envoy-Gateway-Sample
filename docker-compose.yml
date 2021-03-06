@@ -13,7 +13,7 @@ services:
       - "5001:443"
     environment:
       ASPNETCORE_URLS: "https://+;http://+"
-      ASPNETCORE_HTTPS_PORT: "8081"
+      ASPNETCORE_HTTPS_PORT: "5001"
       ASPNETCORE_ENVIRONMENT: "Development"
     volumes:
       - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
@@ -25,7 +25,7 @@ services:
       - "6001:443"
     environment:
       ASPNETCORE_URLS: "https://+;http://+"
-      ASPNETCORE_HTTPS_PORT: "8081"
+      ASPNETCORE_HTTPS_PORT: "6001"
       ASPNETCORE_ENVIRONMENT: "Development"
     volumes:
       - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
