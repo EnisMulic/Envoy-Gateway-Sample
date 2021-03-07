@@ -29,12 +29,13 @@ cd ..
 
 ```
 cd Envoy
-openssl req -config https.config -new -out csr.pem
-openssl x509 -req -days 365 -extfile https.config -extensions v3_req -in csr.pem -signkey key.pem -out https.crt
+openssl req -config ../https.config -new -out csr.pem
+openssl x509 -req -days 365 -extfile ../https.config -extensions v3_req -in csr.pem -signkey key.pem -out https.crt
 cd ..
 ```
 
-* You can place these anywhere and update the docker-compose volumes
+* Note: You can place these anywhere and update the docker-compose volumes  
+* Note: Add the generated `https.cet` to your `Trusted Root Certification Authorities`
 
 ### Run docker
 
@@ -51,7 +52,7 @@ docker-compose up --build
 #### Https
 
 ```
-docker-compose -f docker-compose-https.yml up --build
+docker-compose -f docker-compose.https.yml up --build
 ```
 
 | Envoy Gateway | `https://localhost:10001` |

@@ -27,14 +27,14 @@ static_resources:
               domains: ["*"]
               routes:
               - match:
-                  prefix: "/api01"
+                  prefix: "/api01/"
                 route:
-                  prefix_rewrite: "/weatherforecast"
+                  prefix_rewrite: "/"
                   cluster: api01_service
               - match:
-                  prefix: "/api02"
+                  prefix: "/api02/"
                 route:
-                  prefix_rewrite: "/weatherforecast"
+                  prefix_rewrite: "/"
                   cluster: api02_service
           http_filters:
           - name: envoy.filters.http.router
